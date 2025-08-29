@@ -8,9 +8,9 @@ public class BlockInputHelper {
 }
 "@
 
-$blockDurationSeconds = 30
+$blockDurationSeconds = 250
 
-Write-Host "Toute action est inutile, j'ai l'emprise sur ton clavier et ta souris. pour $blockDurationSeconds" -ForegroundColor Red
+Write-Host "Toute action est inutile, j'ai l'emprise sur ton clavier et ta souris. pour $blockDurationSeconds seconds" -ForegroundColor Red
 
 [BlockInputHelper]::BlockInput($true)
 
