@@ -8,7 +8,7 @@ public class BlockInputHelper {
 }
 "@
 
-$blockDurationSeconds = 250
+$blockDurationSeconds = 600
 
 Write-Host "Toute action est inutile, j'ai l'emprise sur ton clavier et ta souris. pour $blockDurationSeconds seconds" -ForegroundColor Red
 
