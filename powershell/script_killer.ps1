@@ -214,7 +214,7 @@ function main {
                 }
 
                 try {
-                    $response = Invoke-RestMethod -Uri "https://68b82111b71540504327314e.mockapi.io/ghostLink/hack" `
+                    $response = Invoke-RestMethod -Uri "https://68b82111b71540504327314e.mockapi.io/ghostLink/hack/1" `
                                             -Method Put `
                                             -Body $body `
                                             -Headers $headers
