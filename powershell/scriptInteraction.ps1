@@ -7,7 +7,7 @@ public class BlockInputHelper {
     public static extern bool BlockInput(bool fBlockIt);
 }
 "@
-$blockDurationSeconds = 3
+$blockDurationSeconds = 0.1
 
 [BlockInputHelper]::BlockInput($true)
 
